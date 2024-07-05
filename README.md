@@ -1,7 +1,10 @@
 Overview
+<br>
 Welcome, AI enthusiasts! We're excited to present a challenge that pushes the boundaries of computer vision and artificial intelligence. This is the first challenge in a three-part series aimed at developing an advanced AI system for image analysis and manipulation. The ultimate goal is to create a comprehensive solution capable of object detection, scene interpretation, placement scoring for object insertion, and seamless object integration within various scenes.In this phase, we are initially focusing on the Food and Beverage industry, with plans to expand to the Clothing industry in the future.
+<br>
  #1: Image Classification
-The first task focuses on image classification, where your AI model will analyze an uploaded image and extract valuable information.
+ <br>
+The first task focuses on image classification, where your AI model will analyze an uploaded image and extract valuable information. <br>
 
 Object Detection
 Your model will identify and categorize individual objects present within the image. This might include common objects like people, animals, furniture, or natural elements like trees, water bodies, and terrain.
