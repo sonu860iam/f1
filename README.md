@@ -6,11 +6,11 @@ Welcome, AI enthusiasts! We're excited to present a challenge that pushes the bo
  <br>
 The first task focuses on image classification, where your AI model will analyze an uploaded image and extract valuable information. <br>
 
-Object Detection
-Your model will identify and categorize individual objects present within the image. This might include common objects like people, animals, furniture, or natural elements like trees, water bodies, and terrain.
-Scene Interpretation
-Go beyond simply identifying objects; aim to understand the overall scene depicted in the image. This involves generating a concise description that captures the essence of the picture. For example, an image containing a group of people gathered around a table with food might be interpreted as "a family enjoying a dinner together.
-#2: Placement Scoring (Future scope)
+Object Detection <br>
+Your model will identify and categorize individual objects present within the image. This might include common objects like people, animals, furniture, or natural elements like trees, water bodies, and terrain.<br>
+Scene Interpretation <br>
+Go beyond simply identifying objects; aim to understand the overall scene depicted in the image. This involves generating a concise description that captures the essence of the picture. For example, an image containing a group of people gathered around a table with food might be interpreted as "a family enjoying a dinner together.<br>
+#2: Placement Scoring (Future scope) <br>
 The second task delves into the realm of object placement scoring. Here, your model will analyze an image and identify optimal locations for inserting or replacing objects within the scene.
 
 Placement Zones
@@ -19,54 +19,54 @@ Zone Scoring
 Don't just identify zones; rank them based on a set of criteria. This might include factors like:
 Realism: How seamlessly would the inserted object blend into the existing scene?
 Aesthetics: Does the placement enhance the visual appeal of the image, or create an awkward composition?
-Object Occlusion: Would the placement partially or entirely obscure other important elements within the image?
-#3: Object Integration (Compositing - Future scope)
-The final task takes the concept of object placement a step further. Your model will be responsible for inserting or replacing an object within a provided base image, creating a realistic and cohesive final product:
+Object Occlusion: Would the placement partially or entirely obscure other important elements within the image?<br>
+#3: Object Integration (Compositing - Future scope) <br>
+The final task takes the concept of object placement a step further. Your model will be responsible for inserting or replacing an object within a provided base image, creating a realistic and cohesive final product:<br>
 
-Object Integration
-Given an image and a separate image of the object to be inserted, your model should seamlessly integrate the object into the base image. This involves tasks like background removal, perspective adjustment, and lighting correction to ensure the inserted object appears naturally within the scene.
-Post-Processing
-This step involves any additional adjustments desired for the final image. This might include color correction to ensure consistency between the inserted object and the base image, or minor lighting adjustments for a more natural look.
-#1 - Image Classification
-The objective is to create an AI model that analyzes an uploaded image and extracts valuable information through the following functionalities:
+Object Integration <br>
+Given an image and a separate image of the object to be inserted, your model should seamlessly integrate the object into the base image. This involves tasks like background removal, perspective adjustment, and lighting correction to ensure the inserted object appears naturally within the scene.<br>
+Post-Processing <br>
+This step involves any additional adjustments desired for the final image. This might include color correction to ensure consistency between the inserted object and the base image, or minor lighting adjustments for a more natural look. <br>
+#1 - Image Classification <br>
+The objective is to create an AI model that analyzes an uploaded image and extracts valuable information through the following functionalities: <br>
 
-Object Detection: Identify and categorize individual objects within the image, such as people, animals, furniture, or natural elements like trees and water bodies.
+Object Detection: <br> Identify and categorize individual objects within the image, such as people, animals, furniture, or natural elements like trees and water bodies.
 Scene Interpretation: Generate a concise description that captures the essence of the image (e.g., "a family enjoying dinner together").
 Requirements
-Create an API endpoint that processes images and identifies objects within them. The service should return the object names and bounding box coordinates, along with a detailed description of the image.
+Create an API endpoint that processes images and identifies objects within them. The service should return the object names and bounding box coordinates, along with a detailed description of the image.<br>
 
-Input
-The service should accept a JSON object:
+Input <br>
+The service should accept a JSON object: <br>
 
-{
-  "url": "/path/to/image"
-}
-The service should take into account the following considerations when receiving the input:
+{<br>
+  "url": "/path/to/image" <br>
+} <br>
+The service should take into account the following considerations when receiving the input: <br>
 
-The url property is a direct path to the image.
-The image can be of any resolution.
-Output
-The service should return a JSON object:
+The url property is a direct path to the image.<br>
+The image can be of any resolution.<br>
+Output<br>
+The service should return a JSON object:<br>
 
-{
-  "objects": [
-    {
-      "name": "table",
-      "bb": {
-        "topLeft": {
-          "x": "XXpx",
-          "y": "XXpx"
-        },
-        "size": {
-          "width": "XXpx",
-          "height": "XXpx"
-        }
-      }
-    }
-  ],
-  "description": "..."
-}
-an example like this :
+{<br>
+  "objects": [ <br>
+    { <br>
+      "name": "table",<br>
+      "bb": {<br>
+        "topLeft": {<br>
+          "x": "XXpx",<br>
+          "y": "XXpx"<br>
+        },<br>
+        "size": {<br>
+          "width": "XXpx",<br>
+          "height": "XXpx"<br>
+        }<br>
+      }<br>
+    }<br>
+  ],<br>
+  "description": "..."<br>
+}<br>
+an example like this :<br>
 
 {
   "objects": [
@@ -98,20 +98,20 @@ an example like this :
     }
   ],
   "description": "A man on a long exposure picture riding an electric skateboard."
-}
-The final JSON output object should take into account the following considerations:
+} <br>
+The final JSON output object should take into account the following considerations:<br>
 
-Bounding Box (bb): Contains the top-left x,y coordinates and the dimensions of the box for the object.
-Name: Common noun name of the object.
+Bounding Box (bb): Contains the top-left x,y coordinates and the dimensions of the box for the object.<br>
+Name: Common noun name of the object.<br>
 Description: An accurate explanation of the image (e.g., "a bottle on a table" or "a man sitting on a chair by the beach drinking a soft drink").
-Technology Stack
-API Options:
-REST API or GRAPHQL
+Technology Stack<br>
+API Options:<br>
+REST API or GRAPHQL<br>
 
-Programming Language:
+Programming Language:<br>
 Javascript or Python
 
-Interface:
+Interface:<br>
 Develop a web interface for interacting with the system. This interface should allow users to upload an image and click submit, triggering API calls to process the image and display all detected objects along with the scene description. You can use third-party libraries like Gradio for this interface.
 
 Permitted Tools
