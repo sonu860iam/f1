@@ -1,0 +1,8 @@
+# requirements.txt
+torch
+torchvision
+transformers
+flask
+gradio
+requests
+Pillow
