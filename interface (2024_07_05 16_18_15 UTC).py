@@ -1,11 +1,28 @@
-# interface.py
-import gradio as gr
-from model import get_prediction, get_image_description
+from flask import Flask, request, jsonify
+from PIL import Image
+import numpy as np
 
-def classify(url):
-    prediction = get_prediction(url)
-    objects, description = get_image_description(prediction)
-    return objects, description
+app = Flask(__name__)
 
-iface = gr.Interface(fn=classify, inputs="text", outputs=["json", "text"])
-iface.launch()
+class Interface:
+    def __init__(self):
+        self.app = app
+
+    def run(self, debug=False):
+        self.app.run(debug=debug)
+
+    @app.route("/process_image", methods=["POST"])
+    def process_image():
+        image_url = request.json["url"]
+        # Load the image using PIL
+        image = Image.open(image_url)
+        # Pre-process the image
+        image = np.array(image)
+        # Run the image through the model
+        objects, description = model.process_image(image)
+        # Return the output in the required format
+        output = {
+            "objects": objects,
+            "description": description
+        }
+        return jsonify(output)
